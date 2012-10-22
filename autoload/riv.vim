@@ -225,12 +225,7 @@ let s:default.fold_maps = {
 " 2 => convert
 let s:default.buf_maps = {
     \'RivLinkDBClick'    : [['<2-LeftMouse>'],  '',  ''],
-    \'RivLinkEnter'      : [['<CR>', '<KEnter>'],  '',  ''],
     \'RivLinkOpen'       : ['',  'n',  'ko'],
-    \'RivLinkNext'       : ['<TAB>',    'n',  'kn'],
-    \'RivLinkPrev'       : ['<S-TAB>',  'n',  'kp'],
-    \'RivShiftRight'     : [['>', '<C-ScrollwheelDown>' ],  'mi',  'll'],
-    \'RivShiftLeft'      : [['<', '<C-ScrollwheelUp>'],  'mi',  'lh'],
     \'RivListFormat'     : [['='],  'mi',  'l='],
     \'RivListType0'      : ['',  'mi',  'l1'],
     \'RivListType1'      : ['',  'mi',  'l2'],
@@ -285,19 +280,7 @@ let s:default.buf_maps = {
     \'RivHelpSection'    : ['',  'm',   'hs'],
     \'RivQuickStart'     : ['',  'm',   'hq'],
     \}
-let s:default.buf_imaps = {
-    \'<BS>'         : 'riv#action#ins_backspace()',
-    \'<CR>'         : 'riv#action#ins_enter()'   ,
-    \'<KEnter>'     : 'riv#action#ins_enter()'   ,
-    \'<C-CR>'       : 'riv#action#ins_c_enter()' ,
-    \'<C-KEnter>'   : 'riv#action#ins_c_enter()' ,
-    \'<S-CR>'       : 'riv#action#ins_s_enter()' ,
-    \'<S-KEnter>'   : 'riv#action#ins_s_enter()' ,
-    \'<C-S-CR>'     : 'riv#action#ins_m_enter()' ,
-    \'<C-S-KEnter>' : 'riv#action#ins_m_enter()' ,
-    \'<Tab>'        : 'riv#action#ins_tab()'     ,
-    \'<S-Tab>'      : 'riv#action#ins_stab()'    ,
-    \} 
+let s:default.buf_imaps = { } 
 
 let s:default.buf_nmaps = {
     \'<C-E><'         : '<',
@@ -306,10 +289,7 @@ let s:default.buf_nmaps = {
     \'<S-ScrollwheelDown>' : '>',
     \'<S-ScrollwheelUp>'   : '<',
     \}
-let s:default.buf_vmaps = {
-    \'<S-ScrollwheelDown>' : '>gv',
-    \'<S-ScrollwheelUp>'   : '<gv',
-    \}
+let s:default.buf_vmaps = {}
 "}}}
 " menus "{{{
 let s:default.menus = [
