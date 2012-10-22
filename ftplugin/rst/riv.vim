@@ -80,21 +80,22 @@ call s:nmap(g:riv_default.buf_nmaps)
 call s:vmap(g:riv_default.buf_vmaps)
 call s:fold_map(g:riv_default.fold_maps)
 call riv#show_menu()
-aug RIV_BUFFER "{{{
-    if exists("g:riv_auto_format_table") "{{{
-        au! InsertLeave <buffer> call riv#table#format_pos()
-    endif "}}}
-    if exists("g:riv_link_cursor_hl") "{{{
-        " cursor_link_highlight
-        au! CursorMoved,CursorMovedI <buffer>  call riv#link#hi_hover()
-        " clear the highlight before bufwin/winleave
-        au! WinLeave,BufWinLeave     <buffer>  2match none
-    endif "}}}
-    au  WinLeave,BufWinLeave     <buffer>  call riv#file#update()
-    au! BufWritePost <buffer>  call riv#fold#update() 
-    au  BufWritePost <buffer>  call riv#todo#update()
-    au! BufWritePre  <buffer>  call riv#create#auto_mkdir()
-aug END "}}}
+
+"aug RIV_BUFFER "{{{
+    "if exists("g:riv_auto_format_table") "{{{
+        "au! InsertLeave <buffer> call riv#table#format_pos()
+    "endif "}}}
+    "if exists("g:riv_link_cursor_hl") "{{{
+        "" cursor_link_highlight
+        "au! CursorMoved,CursorMovedI <buffer>  call riv#link#hi_hover()
+        "" clear the highlight before bufwin/winleave
+        ""au! WinLeave,BufWinLeave     <buffer>  2match none
+    "endif "}}}
+    ""au  WinLeave,BufWinLeave     <buffer>  call riv#file#update()
+    ""au! BufWritePost <buffer>  call riv#fold#update() 
+    ""au  BufWritePost <buffer>  call riv#todo#update()
+    ""au! BufWritePre  <buffer>  call riv#create#auto_mkdir()
+"aug END "}}}
 
 " tests 
 "}}}

@@ -6,18 +6,18 @@
 "=============================================
 let s:cpo_save = &cpo
 set cpo-=C
-
 let s:p = g:_riv_p
+" ning do not need fold
 fun! s:init_stat(...) "{{{
-    let len = line('$')
-    let b:foldlevel = g:riv_fold_level
-    if len > g:riv_auto_fold1_lines && g:riv_auto_fold_force == 1
-        let b:foldlevel = b:foldlevel >= 1 ? 1 : 0 
-    elseif len > g:riv_auto_fold2_lines && g:riv_auto_fold_force == 1
-        let b:foldlevel = b:foldlevel >= 2 ? 2 : 0 
-    endif
+    "let len = line('$')
+    "let b:foldlevel = g:riv_fold_level
+    "if len > g:riv_auto_fold1_lines && g:riv_auto_fold_force == 1
+        "let b:foldlevel = b:foldlevel >= 1 ? 1 : 0 
+    "elseif len > g:riv_auto_fold2_lines && g:riv_auto_fold_force == 1
+        "let b:foldlevel = b:foldlevel >= 2 ? 2 : 0 
+    "endif
 
-    call s:parse_from_start()
+    "call s:parse_from_start()
 endfun "}}}
 " Parse "{{{
 fun! s:parse_from_start() "{{{
@@ -708,9 +708,9 @@ fun! riv#fold#update() "{{{
     normal! zx
 endfun "}}}
 let s:modified = 0
-fun! riv#fold#init() "{{{
-    call s:init_stat()
-endfun "}}}
+"fun! riv#fold#init() "{{{
+    "call s:init_stat()
+"endfun "}}}
 "}}}
 "
 fun! s:parse_list() "{{{
