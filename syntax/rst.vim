@@ -18,8 +18,16 @@ syn match   rstSections /\v%(\S\s*\n)@<!\_^\s*\S.*\n([=`:.'"~^_*+#-])\1*\s*$/
 syn match   rstSections /\v%(\S\s*\n)@<!\_^(([=`:.'"~^_*+#-])\2*\s*)\n\s*\S.*\n\1$/
 syn match   rstTransition  /\v%(\_^\s*\n)@<=\_^[=`:.'"~^_*+#-]{4,}\s*(\n\s*\_$)\@=/
 
+" add by ning
+"syn region rstEmphasis start=+\*[^*]+ end=+\*+
+"syn region rstStrongEmphasis start=+\*\*[^*]+ end=+\*\*+
+"syn region rstInterpretedText start=+`[^`]+ end=+`+ contains=rstURL
+"syn region rstInlineLiteral start="``" end="``" contains=rstURL
+"syn region rstSubstitutionReference start=+|\w+ end=+\w|+ skip=+\\|+
+
+
 syn cluster rstCruft                contains=rstEmphasis,rstStrongEmphasis,
-      \ rstInterpretedText,rstInlineLiteral,rstSubstitutionReference,
+      \ rstInterpretedText,rstInlineLiteral,
       \ rstInlineInternalTargets,rstFootnoteReference,rstHyperlinkReference
 
 " A blank line is needed after the LiteralBlock
@@ -168,7 +176,9 @@ hi def link rstSubstitutionDefinition       rstDirective
 hi def link rstDelimiter                    Delimiter
 " TODO: I dunno...
 hi def      rstEmphasis                     term=italic cterm=italic gui=italic
-hi def link rstStrongEmphasis               Special
+"hi def link rstStrongEmphasis               Special  by ning
+hi def rstStrongEmphasis               term=bold cterm=bold gui=bold
+"
 "term=bold cterm=bold gui=bold
 hi def link rstInterpretedTextOrHyperlinkReference  Identifier
 hi def link rstInlineLiteral                String
