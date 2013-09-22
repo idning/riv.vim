@@ -130,7 +130,7 @@ function! s:DefineInlineMarkup(name, start, middle, end)
   execute 'hi def link rst' . a:name . 'Delimiter' . ' rst' . a:name
 endfunction
 
-call s:DefineInlineMarkup('Emphasis', '\*', '\*', '\*')
+"call s:DefineInlineMarkup('Emphasis', '\*', '\*', '\*') " comment by ning
 call s:DefineInlineMarkup('StrongEmphasis', '\*\*', '\*', '\*\*')
 call s:DefineInlineMarkup('InterpretedTextOrHyperlinkReference', '`', '`', '`_\{0,2}')
 call s:DefineInlineMarkup('InlineLiteral', '``', "", '``')
@@ -153,11 +153,13 @@ exe 'syn match  rstStandaloneHyperlink  contains=@NoSpell '
 
 " TODO: Use better syncing.  I don’t know the specifics of syncing well enough,
 " though.
-syn sync minlines=50 linebreaks=1
+"syn sync minlines=500 linebreaks=1
+"syn sync fromstart  " 这个牛.
+
 " every line start with \S will end pevious highlight group
 
 hi def link rstTodo                         Todo
-hi def link rstComment                      Comment
+"hi def link rstComment                      Comment
 hi def link rstSections                     Type
 hi def link rstTransition                   Typedef
 hi def link rstLiteralBlock                 String
@@ -175,6 +177,7 @@ hi def link rstExDirective                  String
 hi def link rstSubstitutionDefinition       rstDirective
 hi def link rstDelimiter                    Delimiter
 " TODO: I dunno...
+" 
 hi def      rstEmphasis                     term=italic cterm=italic gui=italic
 "hi def link rstStrongEmphasis               Special  by ning
 hi def rstStrongEmphasis               term=bold cterm=bold gui=bold
