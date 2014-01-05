@@ -280,6 +280,23 @@ let s:default.buf_maps = {
     \'RivHelpSection'    : ['',  'm',   'hs'],
     \'RivQuickStart'     : ['',  'm',   'hq'],
     \}
+"let s:default.buf_imaps = {
+    "\'<BS>'         : 'riv#action#ins_backspace()',
+    "\'<CR>'         : 'riv#action#ins_enter()'   ,
+    "\'<KEnter>'     : 'riv#action#ins_enter()'   ,
+    "\'<C-CR>'       : 'riv#action#ins_c_enter()' ,
+    "\'<C-KEnter>'   : 'riv#action#ins_c_enter()' , 
+    "\'<S-CR>'       : 'riv#action#ins_s_enter()' ,
+    "\'<S-KEnter>'   : 'riv#action#ins_s_enter()' ,
+    "\'<C-S-CR>'     : 'riv#action#ins_m_enter()' ,
+    "\'<C-S-KEnter>' : 'riv#action#ins_m_enter()' ,
+    "\'<Tab>'        : 'riv#action#ins_tab()'     ,
+    "\'<S-Tab>'      : 'riv#action#ins_stab()'    ,
+    "\} 
+"C-CR S-CR only wrok on gvim. 
+"CR will make a Paste of mulitline text break into many pieces in undo history
+"
+
 let s:default.buf_imaps = { } 
 
 let s:default.buf_nmaps = {
