@@ -27,6 +27,12 @@ syn match   rstCommentTitle '\v(^\s+|(^\.\.\s+)@<=):=\u\w*(\s+\u\w*)*:' containe
 syn cluster rstCommentGroup contains=rstCommentTitle,rstTodo
 
 
+" from syntax/rst.vim, to override the priority of rstEnumeratedList
+" according to http://vim.1045645.n5.nabble.com/override-syntax-priority-rules-td5542519.html
+" When multiple Match or Region items start in the same position, the item defined last has priority. 
+syn match   rstSections /\v%(\S\s*\n)@<!\_^\s*\S.*\n([=`:.'"~^_*+#-])\1*\s*$/
+syn match   rstSections /\v%(\S\s*\n)@<!\_^(([=`:.'"~^_*+#-])\2*\s*)\n\s*\S.*\n\1$/
+
 " Local File: "{{{1
 syn cluster rstCruft add=rstStandaloneHyperlink
 syn cluster rstCommentGroup add=@rstLinkGroup
